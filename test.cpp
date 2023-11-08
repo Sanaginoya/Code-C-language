@@ -1,6 +1,5 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <stdio.h>
-#include <cstring>
 using namespace std;
  //int main()
 
@@ -19,4 +18,50 @@ using namespace std;
  //   cout << a;
    // return 0;
 //}           // 创建字符数组时要给\0预留位置
+//int main()
+//{
+ // char a;
+ // char b[5];
+ // cin >> a;
+//  cin.get();       //需要加cin.get（）命令清空缓冲区。
+ // cin.getline(b, 5);
+ // cout << b;
+ // return 0;
+//}
+#if 0
+int cmp (const void* a, const void* b)    //快速排序库函数逆序输出。
+{
+  return -(*((int*)a) - *((int*)b));
+}
+int main()
+{
+   int n;
+   cin >> n;
+   int a[n];
+   int i = 0;
+   for (i = 0; i < n; i++)
+   {
+    cin >> a[i];
+   }
+   qsort(a,n,4,cmp);
+   for (i = 0; i < n; i++)
+   cout << a[i] <<" ";
+   return 0;
+}
+#endif
 
+#if 0                    // goto跳转到的语句行本来也会正常执行。
+int main()
+{
+  int i = 0;
+  for (i = 0; i < 5; i++)
+  {
+    if (i != 4)
+  cout << i << " ";
+  else
+  goto std;
+  std : cout << i << " ";
+  }
+  return 0;
+}
+#endif
