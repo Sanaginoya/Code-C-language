@@ -57,7 +57,7 @@ int main()
     temp1 = 0;
     for (k = 0; k < n; k++)
     {
-        if (score[k][1] == score[k + 1][1])
+        if (score[k][1] == score[k + 1][1])     //两种解决方案 ： 一种使用goto语句强行修正，但需要注意i要加一修正；另一种是将数组开大一位修正，但是要记着初始化。
         {
             flag++;
             continue;
