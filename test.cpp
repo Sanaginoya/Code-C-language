@@ -65,3 +65,14 @@ int main()
   return 0;
 }
 #endif
+#if 0
+int main()
+{
+  char a[99];
+  char b;
+  scanf ("%c", &b);
+  gets(a);
+  printf ("%s", a);
+  return 0;
+}
+#endif                           // Before using "gets" and "fgets",you need to clean stdin.
