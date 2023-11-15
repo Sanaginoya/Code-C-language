@@ -3,42 +3,65 @@
 using namespace std;
 int main()
 {
-    struct output
+    struct w
     {
-        char word;
-        int sum;
-    } out[26];
-    char a[300];
-    cin >> a;
-    int len = strlen(a);
-    int sum1 = 0;
-    char ori = 'a';
-    int i, j, k;
+        char zimu;
+        int times;
+    } word[26];
+    char input[300];
+    cin.getline(input, 300);
+    int i = 0;
+    int j = 0;
     for (i = 0; i < 26; i++)
     {
-        out[i].word = (char)(ori + i);
-        for (j = 0; j < len; j++)
+        word[i].zimu = 'a' + i;
+        word[i].times = 0;
+    }
+    for (i = 0; i < strlen(input); i++)
+    {
+        for (j = 0; j < 26; j++)
         {
-            if (a[j] == (char)(ori + i) || a[j] == (char)(ori + i - 32))
+            if (*(input + i) == word[j].zimu || *(input + i) == (char)((int)(word[j].zimu) - 32))
             {
-                sum1 += 1;
+                word[j].times++;
+                break;
             }
         }
-        out[i].sum = sum1;
-        sum1 = 0;
-        ori = 'a';
     }
-    int temp1, temp2;
+    int temp1;
+    char temp2;
     for (i = 0; i < 25; i++)
     {
         for (j = 0; j < 25 - i; j++)
         {
-            if (out[j].sum < out[j + 1].sum)
+            if (word[j].times < word[j + 1].times)
             {
-                temp1 = out[j].sum;
-                out[j].sum = out[j + 1].sum;
-                out[j + 1].sum = temp1;
-                temp2 = out[j].            }
+                temp1 = word[j].times;
+                word[j].times = word[j + 1].times;
+                word[j + 1].times = temp1;
+                temp2 = word[j].zimu;
+                word[j].zimu = word[j + 1].zimu;
+                word[j + 1].zimu = temp2;
+            }
+            if (word[j].times == word[j + 1].times)
+            {
+                if ((int)word[j].zimu > (int)word[j + 1].zimu)
+                {
+                    temp2 = word[j].zimu;
+                    word[j].zimu = word[j + 1].zimu;
+                    word[j + 1].zimu = temp2;
+                }
+            }
         }
     }
+    for (i = 0; i < 26; i++)
+    {
+        if (word[i].times != 0)
+        {
+            cout << word[i].zimu << " " << word[i].times <<endl;
+        }
+        else
+        break;
+    }
+    return 0;
 }
