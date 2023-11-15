@@ -75,4 +75,25 @@ int main()
   printf ("%s", a);
   return 0;
 }
-#endif                           // Before using "gets" and "fgets",you need to clean stdin.
+#endif                           // Before using "gets" and "fgets", you need to clean buffer.
+                                 // Optimizing sort algorithm : You can sort many arrays at the same time as long as you want.
+                                 // This way is truly right. You don't need to use a sign like "flag" to continue difficult sorts again.
+//int main()
+//{
+  //struct a1
+  //{
+   // int a;
+   // int e;
+   // char t;
+    //float e1;
+  //};
+ // cout << sizeof(a1);
+  //return 0;
+//}                             //You can straightly use data type to compute its size.
+int main()
+{
+  long long a = 0;
+  a = 48 * pow(10, 15);
+  cout << a;
+  return 0;
+}
