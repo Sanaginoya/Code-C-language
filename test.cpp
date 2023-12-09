@@ -90,10 +90,21 @@ int main()
  // cout << sizeof(a1);
   //return 0;
 //}                             //You can straightly use data type to compute its size.
-int main()
+/* int main()
 {
   long long a = 0;
   a = 48 * pow(10, 15);
   cout << a;
+  return 0;
+} */
+int main()
+{
+  char a[2][2];
+  for (int i = 0; i < 2; i++)
+  for (int j = 0; j < 2; j++)
+  cin >> a[i][j];
+  for (int i = 0; i < 2; i++)
+  for (int j = 0; j < 2; j++)
+  cout << a[i][j];
   return 0;
 }
