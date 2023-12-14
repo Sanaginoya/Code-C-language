@@ -18,7 +18,7 @@ int main()
             for (k = j + 1; k < n - 1; k++)
             {
                 if ((a[k] <= m)|| (a[i] + a[j] + a[k] <= m)){
-                for (p = k + 1; p < n; p++)
+                for (p = k + 1; p < n; p++)                            //可以check的第四个数是否在数组中
                 {
                     if (a[p] <= m)
                     if (a[i] + a[j] + a[p] + a[k] == m)

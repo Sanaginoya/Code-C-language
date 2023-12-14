@@ -1,3 +1,4 @@
+//其实用到了动态规划的思想
 #include <iostream>
 using namespace std;
 int arr[100] = {0};                     //全局变量只能在定义时赋初值
