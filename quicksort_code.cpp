@@ -1,8 +1,14 @@
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 int partition (int arr[], int left, int right)
 {
-    int temp = arr[left];
+    srand((unsigned)time(NULL));
+    int Temp = (rand() % (right - left + 1)) + left;
+    int temp = arr[Temp];
+    arr[Temp] = arr[left];
+    arr[left] = temp;
     do
     {
         while ((left < right) && (arr[right] > temp))
