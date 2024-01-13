@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 int cmp (const void* a, const void* b)
 {
@@ -8,17 +8,18 @@ int cmp (const void* a, const void* b)
 int main()
 {
     int n;
-    cin >> n;
-    int a[n];
+    scanf("%d", &n);
+    int a[n], b[n], c[n], d[n];
     int i;
     for (i = 0; i < n; i++)
     {
-        cin >> a[i];
+        scanf("%d%d%d", &a[i], &b[i], &c[i]);
+        d[i] = a[i] + b[i] + c[i];
     }
-    qsort (a, n, 4, cmp);
+    qsort (d, n, 4, cmp);
     for (i = 0; i < n; i++)
     {
-        cout << a[i] <<endl;
+        printf("%d\n", d[i]);
     }
     return 0;
 }

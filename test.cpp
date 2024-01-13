@@ -97,14 +97,31 @@ int main()
   cout << a;
   return 0;
 } */
+
 int main()
 {
-  char a[2][2];
-  for (int i = 0; i < 2; i++)
-  for (int j = 0; j < 2; j++)
-  cin >> a[i][j];
-  for (int i = 0; i < 2; i++)
-  for (int j = 0; j < 2; j++)
-  cout << a[i][j];
-  return 0;
+  int n;
+  cin >> n;
+  int a[n];
+  int i, j;
+  for (i = 0; i < n; i++)
+  {
+    cin >> a[i];
+  }
+  int temp;
+  for (i = 0; i < n - 1; i++)
+  {
+    for (j = 0; j < n - 1 - i; j++)
+    {
+      if (a[j] > a[j + 1])
+      {
+        temp = a[j];
+        a[j] = a[j + 1];
+        a[j + 1] = temp;
+      }
+    }
+  }
+  for (i = 0; i < n; i++)
+  cout << a[i] << endl;
+  return 0; 
 }

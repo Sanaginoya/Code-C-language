@@ -46,7 +46,7 @@ int main()
     for (i = 0; i < n; i++)
     {
         char temp[40] = {'\0'};
-        strcpy(answer[i], convert(&op[i][0], &in[i][0], &out[i][0], temp));
+        strcpy(answer[i], convert(&op[i][0], &in[i][0], &out[i][0], temp));     //一种新的进制转换算法考虑
     }
     for (i = 0; i < n; i++)
     {
